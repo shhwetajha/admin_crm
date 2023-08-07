@@ -32,7 +32,7 @@ from django.forms.models import model_to_dict
 from order.timeleft import working_time_function
 
 #2.310-celerybeat
-#
+# function for tackling multiple errors in just on variable
 
 def getFirstError(errors):
     message = ""
@@ -120,7 +120,6 @@ class OrderViewSet(ModelViewSet):
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
                 invoice_instance=Invoice.objects.get(order=instance)
-                
                 if data.get('quantity'):    
                     quantity = data.get('quantity')
                     invoice_instance.quantity = quantity
@@ -604,6 +603,7 @@ class TakeAppointmentViewSet(ModelViewSet):
 # for day in range(1, 31): 
 #   print(now+timedelta(days=day))
 
+
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def slots_list(request):
@@ -643,6 +643,8 @@ class InstallerAvailViewSet(ModelViewSet):
                 {"error": True, "errors": "Permission Denied"}, 
                 status=status.HTTP_403_FORBIDDEN,
 )
+
+
         else:
             data = self.request.data
             data._mutable = True
