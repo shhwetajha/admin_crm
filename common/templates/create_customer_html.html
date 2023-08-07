@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Dear {{context.first_name}} {{context.last_name}},</p>
+    <p>We are pleased to inform you that your requested Order has been registered in Solar365. We appreciate your interest in our services and would like to confirm the details of your order.
+    </p>
+
+
+    <div>
+        <p>This email is confirm that your registration has been successfully processed. Your <p>username: {{context.username}}</p>
+        <p>Password: {{context.pin}}<p> and you can use it to log in to our platform or website.</p>
+        <p> We are excited to have you on board and look forward to providing you with seamless and enjoyable exprience.</p>
+    </div>
+
+    <div>
+
+        <p>We are committed to continually improving our services, and your feedback is essential in helping us enhance your exprience. Please do not hesitate to share your thoughts, suggestion, or any concern you may have.  </p>
+        
+
+        <p>Once again, welcome to Solar 365. We are thrilled to have you as a part of our community and look forward to serving you. </p>
+
+    </div>
+
+    <div>
+        <p>Best regards,</p>
+    </div>
+
+    <div>
+        <p>{{admin.first_name}} {{admin.last_name}} <br> Solar 365 <br> {{admin.email}} <br>{{address.get_complete_address}} <br><a href="https://www.solar365.net.au/">https://www.solar365.net.au/</a></p>
+    </div>
+</body>
+
+</html>

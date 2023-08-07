@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Dear {{user.first_name}} {{user.last_name}},</p>
+    <p>We are pleased to inform you that your requested appointment has been approved. We appreciate your interest in our services and would like to confirm the details of your appointment.</p>
+
+    <div style="line-height: 1px;">
+        <p>Appointment Details:</p><br>
+        <p>Date: {{appointment.appointment_date}}</p>
+        <p>Location: {{order.to_address.get_complete_address}}</p>
+    </div>
+
+    <div>
+        <p>Please ensure your availibility for the appointment. If there are any changes or if you need to reschedule, please let us know at least before 24 hours in advance, so we can accommodate your request.</p>
+        <p>Please note that a convenience fee of [Convenience Fee Amount/Percentage] may apply for rescheduling the appointment.</p>
+
+        <p>If you have any specific requirements or additional information that you would like to share with us before the appointment, please feel free to reply to this email or contact our customer service team at {{admin.phone}} or {{admin.email}}. We want to ensure that we provide you with the best possible service and address any concerns you may have.</p>
+        <p>We look forward to serving you and providing you with a pleasant and productive appointment. If you have any further questions, please do not hesitate to contact us.
+        </p>   
+    </div>
+
+    <div>
+        <p>Thank you for choosing our services, and we appreciate the opportunity to assist you.</p>
+    </div>
+
+    <div>
+        <p><b>Best regards,</b></p>
+    </div>
+    <div>
+        <p> Solar 365 <br>{{admin.first_name}} {{admin.last_name}} <br>{{admin.email}}<br> {{admin.phone}} <br>{{address.get_complete_address}} <br><a href="https://www.solar365.net.au/">https://www.solar365.net.au/</a></p>
+    </div>
+
+</body>
+
+</html>

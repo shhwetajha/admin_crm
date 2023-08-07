@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Dear {{user.get_full_name}},</p>
+    <p>We are delighted to inform you that your registration for the Company program has been successfully processed. I want to inform that when admin approve your account then you can Signin. We appreciate your interest and enthusiasm in joining our team.</p><br>
+
+    <div style="line-height: 1px;">
+        <p><b>Below are the details of your registration:</b></p><br>
+        <p>Name: {{user.get_full_name}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Role: {{installer.company_name}}</p>
+        <p>Start Date: {{user.created_at}}</p>
+        <p>Location: {{to_address.get_complete_address}}</p>
+    </div>
+    <div>
+        <p>As a member of the Company, you will play a vital role in creating engaging and impactful content for our organization. Your creativity and expertise will contribute significantly to our content development and strategy.</p>
+
+        <p>We would like to schedule an orientation session for all new team members, where we will provide you with an overview of our content goals, expectations, and any necessary training. You will receive a separate email with the orientation details and timing.</p>
+        <p>If you have any questions or need further information, please don't hesitate to reach out to {{admin.get_full_name}}, our designated point of contact for the Team Content program. You can reach {{admin.get_full_name}} at {{admin.email}} or {{admin.phone}}.
+
+        </p>
+        <p>Once again, congratulations on your registration! We look forward to working together and creating compelling content that drives our organization's success.</p>
+
+    </div>
+    <div>
+        <p><b>Best regards,</b></p>
+    </div>
+    <div>
+        <p> Solar 365,<br>{{admin.get_full_name}} <br> {{admin.email}}<br> {{admin.phone}} <br>{{address.get_complete_address}} <br><a href="https://www.solar365.net.au/">https://www.solar365.net.au/</a></p>
+    </div>
+
+</body>
+
+</html>

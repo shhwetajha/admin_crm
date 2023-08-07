@@ -1,0 +1,19 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CounterBook</title>
+</head>
+
+<body>
+    <p>Dear {{full_name}} ({{email}})</p>
+    <p>For security reason, you're required to use the following
+    One Time Password to verify your email.:</p>
+    <p><b>{{otp}}</b></p><br>
+</body>
+
+</html>

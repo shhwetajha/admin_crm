@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Dear {{invoice.name}},</p>
+    <p>We hope this email finds you well. We would like to provide you with the tax invoice for the goods/services provided to you as per our agreement. Kindly find the details below:</p>
+
+    <div style="line-height: 1px;">
+        <p>Invoice Number: {{invoice.invoice_number}}</p>
+        <p>Invoice Date: {{invoice.due_date}}</p>
+    </div>
+
+    <div>
+        <p>Remized Decription of Good/Services</p>
+
+        <div class="row">
+            <table style="border: 1px solid white" class="table">
+              <thead>
+                <tr style="background-color: #146604; border:none; color: #f1f1f1">
+                  <th scope="col">Date</th>
+                  <th scope="col" style="color: #f1f1f1">Package</th>
+                  <th scope="col" style="color: #f1f1f1">QTY</th>
+                  <th scope="col" style="color: #f1f1f1">RATE</th>
+                  <th scope="col" style="color: #f1f1f1">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for invoice_hist in invoice_hist %}
+                <tr>
+                  <th scope="row">{{invoice.due_date}}</th>
+                  <td>{{invoice_hist.invoice_title}}</td>
+                  <td style="text-align: center">{{invoice.quantity}}</td>
+                  <td>{{invoice.rate}}</td>
+                  <td>{{invoice.total_amount}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        <div style="line-height: 1px;">
+            <p><b>Subtotal:</b> {{invoice.total_amount}} </p>
+            <p><b>Tax:</b> {{invoice.other}}</p>
+            <p><b>Grand Total:</b> {{invoice.total_amount}}</</p>
+            <p><b>Payment:</b> {{invoice.amount_paid}}</p>
+            <p><b>Total Due:</b> {{invoice.amount_due}}</</p>
+        </div>
+
+    </div>
+
+    <div>
+
+        <p><b>Payment Options:</b></p>
+        <p>We provide the following payment option for your convenience:</p>
+
+        <div>
+            <p><b>1. Bank Transfer:</b></p>
+            <p>Bank Name: IDFC First Bank</p>
+            <p>Account Name:RJ&HR Pty Ltd. T/A Solar365</p>
+            <p>Account Number:1322716</p>
+            <p>Branch: Morley</p>
+            <p>Swift Code(for international transfer):306-042</p>
+        </div>
+
+        <p>Please ensure that you include the invoice number as the reference when making the <br> bank transfer.
+            Kindly
+            note that any bank changes or fees associated with the transfer <br> should be done by you. </p>
+
+        <div>
+            <p><b>2. Online Payment:</b></p>
+            <p>We also offer an online payment portal, where you can securely pay your invoice using <br> your
+                credit/debit
+                card. TO access the portal , please visit [Payment Portal URL] and follow <br> the instructions provided.
+            </p>
+            <p>Please note that a convenience fee of[Convenience Fee Amount/Percentage] may apply for online payments.
+            </p>
+        </div>
+
+    </div>
+
+    <br>
+
+    <p><b>Payment Terms:</b></p>
+    <div>
+
+        <p>[Specify the payment terms and any applicable due dates]. </p>
+
+        <p>Please note that all amounts mentioned are in doller. If you have any questions or concern regarding the
+            invoice , feel free to contact our billing department at {{admin.email}} or {{admin.phone}}. </p>
+
+        <div style="margin-top: 4px;">
+            <p>Kindly ensure the payment is made within the specified timeframe mentioned in the payment terms. Your
+                prompt attention to this matter is greatly appreciated. </p>
+        </div>
+
+    </div>
+
+    <div>
+        <p>Thank You for your continued partnership and support. We value our business realationship with you and
+            look forward to serving you in the future.</p>
+    </div>
+
+    <div>
+        <p><b>Sincerey,</b></p>
+    </div>
+
+    <div>
+        <p>{{admin.first_name}} {{admin.last_name}} <br> Solar 365 <br> {{admin.email}} <br>{{address.get_complete_address}} <br><a href="https://www.solar365.net.au/">https://www.solar365.net.au/</a></p>
+    </div>
+</body>
+
+</html>

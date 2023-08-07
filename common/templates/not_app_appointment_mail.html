@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Dear {{user.get_full_name}},</p>
+    <p>We hope this email finds you well. We regret to inform you that your requested appointment, scheduled for {{appointment.appointment_date}} cannot be approved at this time. We understand the inconvenience this may cause and apologize for any disruption to your plans.</p>
+
+    <div>
+        <p>After careful consideration, we have determined that it is not feasible to proceed with the appointment due to the non-availibility of the associated staff members. We assure you that we have taken this decision after thorough evaluation and with the intention of providing you with the best possible service in the future.</p>
+
+        <p>We understand the importance of the appointment to you so, please select any other available day for appointment. please <a href="http://65.0.45.255:8000/take-appointment/1/">click_here</a> to reschedule the appointment. Our team is available to discuss your concerns and explore other available options. Please feel free to contact us at {{admin.phone}} to discuss further.
+
+        </p>
+        <p>Once again, we apologize for any inconvenience caused by this decision. We value your patronage and appreciate your understanding in this matter. We look forward to resolving any concerns you may have and assisting you with your future needs.</p>   
+    </div>
+
+    <div>
+        <p>Thank you for your cooperation.</p>
+    </div>
+
+    <div>
+        <p><b>Sincerely,</b></p>
+    </div>
+    <div>
+        <p> Solar 365 <br>{{admin.get_full_name}} <br> {{admin.email}}<br> {{admin.phone}} <br>{{address.get_complete_address}} <br><a href="https://www.solar365.net.au/">https://www.solar365.net.au/</a></p>
+    </div>
+
+</body>
+
+</html>
